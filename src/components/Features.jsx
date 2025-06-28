@@ -1,5 +1,5 @@
 import { useGSAP } from '@gsap/react'
-import React, { useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { animateWithGsap } from '../utils/animations';
 import { explore1Img, explore2Img, exploreVideo } from '../utils';
 import gsap from 'gsap';
@@ -31,6 +31,17 @@ const Features = () => {
     )
   }, []);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const handleEnded = () => {
+      video.currentTime = 0;
+      video.play();
+    };
+    video.addEventListener('ended', handleEnded);
+    return () => video.removeEventListener('ended', handleEnded);
+  }, []);
+
   return (
     <section className="h-full common-padding bg-zinc relative overflow-hidden">
       <div className="screen-max-wdith">
@@ -46,7 +57,7 @@ const Features = () => {
 
           <div className="flex-center flex-col sm:px-10">
             <div className="relative h-[50vh] w-full flex items-center">
-              <video playsInline id="exploreVideo" className="w-full h-full object-cover object-center" preload="none" muted autoPlay ref={videoRef}>
+              <video playsInline id="exploreVideo" className="w-full h-full object-cover object-center" preload="none" muted autoPlay loop ref={videoRef}>
                 <source src={exploreVideo} type="video/mp4" />
               </video>
             </div>

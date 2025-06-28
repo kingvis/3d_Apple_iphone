@@ -17,14 +17,24 @@ const Highlights = () => {
           <h1 id="title" className="section-heading">Get the highlights.</h1>
 
           <div className="flex flex-wrap items-end gap-5">
-            <p className="link">
+            <a
+              href="https://www.apple.com/apple-events/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="highlight-btn"
+            >
               Watch the film
-              <img src={watchImg} alt="watch" className="ml-2" />
-            </p>
-            <p className="link">
+              <img src={watchImg} alt="watch" className="ml-2 w-5 h-5 inline-block align-middle" />
+            </a>
+            <a
+              href="https://www.apple.com/apple-events/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="highlight-btn"
+            >
               Watch the event
-              <img src={rightImg} alt="right" className="ml-2" />
-            </p>
+              <img src={rightImg} alt="right" className="ml-2 w-5 h-5 inline-block align-middle" />
+            </a>
           </div>
         </div>
 

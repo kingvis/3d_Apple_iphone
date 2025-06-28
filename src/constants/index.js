@@ -9,7 +9,12 @@ import {
   yellowImg,
 } from "../utils";
 
-export const navLists = ["Store", "Mac", "iPhone", "Support"];
+export const navLists = [
+  { label: "Store", url: "https://www.apple.com/in/store" },
+  { label: "Mac", url: "https://www.apple.com/in/mac/" },
+  { label: "iPhone", url: "https://www.apple.com/in/iphone/" },
+  { label: "Support", url: "https://support.apple.com/en-in" },
+];
 
 export const hightlightsSlides = [
   {
@@ -79,9 +84,9 @@ export const sizes = [
 ];
 
 export const footerLinks = [
-  "Privacy Policy",
-  "Terms of Use",
-  "Sales Policy",
-  "Legal",
-  "Site Map",
+  { label: "Privacy Policy", url: "https://www.apple.com/legal/privacy/" },
+  { label: "Terms of Use", url: "https://www.apple.com/legal/internet-services/terms/site.html" },
+  { label: "Sales Policy", url: "https://www.apple.com/shop/help/sales_refunds" },
+  { label: "Legal", url: "https://www.apple.com/legal/" },
+  { label: "Site Map", url: "https://www.apple.com/sitemap/" },
 ];

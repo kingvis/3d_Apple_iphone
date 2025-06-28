@@ -5,12 +5,16 @@ import Model from './components/Model';
 import Features from './components/Features';
 import HowItWorks from './components/HowItWorks';
 import Footer from './components/Footer';
+import TorchLight from './components/TorchLight';
+import PixelDust from './components/PixelDust';
 
 import * as Sentry from '@sentry/react';
 
 const App = () => {
   return (
     <main className="bg-black">
+      <PixelDust />
+      <TorchLight />
       <Navbar />
       <Hero />
       <Highlights />

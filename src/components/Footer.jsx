@@ -8,13 +8,23 @@ const Footer = () => {
         <div>
           <p className="font-semibold text-gray text-xs">
             More ways to shop: {' '}
-            <span className="underline text-blue">
-            Find an Apple Store {' '}
-            </span>
+            <a
+              href="https://www.apple.com/in/retail/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline text-blue hover:underline"
+            >
+              Find an Apple Store
+            </a>{' '}
             or {' '}
-            <span className="underline text-blue">
-            other retailer
-            </span>{' '}
+            <a
+              href="https://locate.apple.com/in/en/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline text-blue hover:underline"
+            >
+              other retailer
+            </a>{' '}
             near you.
           </p>
           <p className="font-semibold text-gray text-xs">
@@ -24,18 +34,27 @@ const Footer = () => {
 
         <div className="bg-neutral-700 my-5 h-[1px] w-full" />
 
-        <div className="flex md:flex-row flex-col md:items-center justify-between">
-          <p className="font-semibold text-gray text-xs">Copright @ 2024 Apple Inc. All rights reserved.</p>
-          <div className="flex">
+        <div className="flex flex-col md:flex-row md:items-center justify-between w-full">
+          <p className="font-semibold text-gray text-xs">Copyright @ 2025 Apple Inc. All rights reserved.</p>
+          <div className="flex items-center flex-wrap justify-center md:justify-end w-full md:w-auto mt-2 md:mt-0">
             {footerLinks.map((link, i) => (
-              <p key={link} className="font-semibold text-gray text-xs">
-                {link}{' '}
-                {i !== footerLinks.length - 1 && (
-                  <span className="mx-2"> | </span>
-                )}
-              </p>
+              <>
+                <a
+                  key={link.label}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-gray text-xs hover:underline mx-2"
+                >
+                  {link.label}
+                </a>
+                {i !== footerLinks.length - 1 && <span className="text-gray">|</span>}
+              </>
             ))}
           </div>
+        </div>
+        <div className="w-full flex justify-center md:justify-end mt-2">
+          <span className="text-xs text-gray-500">Created by Vissal | <a href="mailto:vissalv@gmail.com" className="underline hover:text-gray-300">vissalv@gmail.com</a></span>
         </div>
       </div>
     </footer>
